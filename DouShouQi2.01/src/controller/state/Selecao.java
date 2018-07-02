@@ -30,19 +30,21 @@ public class Selecao extends State {
             ci.execute(y, x, 2, controller);
             controller.notificaSelecao(y, x);
 
-        } else if (controller.getPecaSelecionada().isMovimentacaoPossivel(y, x)) { //Realiza Movimentação
+        } else if (controller.getPecaSelecionada().isMovimentacaoPossivel(y, x) && peca == null) { //Realiza Movimentação
             int posAnteriorY = controller.getPecaSelecionada().getY();
             int posAnteriorX = controller.getPecaSelecionada().getX();
 
             ci.execute(y, x, 1, controller.getPecaSelecionada());
+            
+            operacoesPosMovOuAtaque(y, x, posAnteriorY, posAnteriorX);
+            
+        } else if (controller.getPecaSelecionada().isMovimentacaoPossivel(y, x) && peca != null) { //Ataque
+            int posAnteriorY = controller.getPecaSelecionada().getY();
+            int posAnteriorX = controller.getPecaSelecionada().getX();
 
-            controller.notificaMovimentacao(y, x, posAnteriorY, posAnteriorX);
+            ci.execute(y, x, 3, controller.getPecaSelecionada());
 
-            controller.trocarAtacante();
-            controller.setPecaSelecionada(null);
-            controller.setState(new NaoSelecao(controller));
-        } else { //Ataque
-
+            operacoesPosMovOuAtaque(y, x, posAnteriorY, posAnteriorX);
         }
     }
 
@@ -50,6 +52,14 @@ public class Selecao extends State {
     public void proxEstado() throws Exception {
         throw new Exception("Operação não suportada, para sair do estado de"
                 + " seleção é necessário informar uma coordenada.");
+    }
+    
+    private void operacoesPosMovOuAtaque(int y, int x, int posAnteriorY, int posAnteriorX) {
+        controller.notificaMovimentacao(y, x, posAnteriorY, posAnteriorX);
+
+        controller.trocarAtacante();
+        controller.setPecaSelecionada(null);
+        controller.setState(new NaoSelecao(controller));
     }
 
 }

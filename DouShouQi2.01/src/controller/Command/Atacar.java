@@ -1,6 +1,7 @@
 package controller.Command;
 
 import model.Peca;
+import model.Tabuleiro;
 
 /**
  *
@@ -16,7 +17,16 @@ public class Atacar implements Command {
     
     @Override
     public void execute(int y, int x) throws Exception {
-        peca.atacar(y, x);
+        Peca pecaDefensora = Tabuleiro.getInstance().getTerreno(y, x).getPeca();
+        if(peca.getForca() > pecaDefensora.getForca()) {
+            peca.atacar(pecaDefensora);
+            System.out.println(peca.getPecasAtacadas().size());
+        } else if(peca.getNome().equalsIgnoreCase("rato") && pecaDefensora.getNome()
+                .equalsIgnoreCase("Elefante")) {
+            peca.atacar(pecaDefensora);
+        } else {
+            throw new Exception("Ataque inapropriado");
+        }
     }
     
 }

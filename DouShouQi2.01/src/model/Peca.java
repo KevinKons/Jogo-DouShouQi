@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Avell
@@ -13,6 +16,7 @@ public abstract class Peca {
     protected Time time;
     protected int x;
     protected int y;
+    protected List<Peca> pecasAtacadas = new ArrayList<>();
 
     public Peca(int forca, String caminhoImagem, String nome, Tabuleiro tabuleiro, Time time, int y, int x) {
         this.forca = forca;
@@ -44,8 +48,11 @@ public abstract class Peca {
         return nome;
     }
 
-    public void atacar(int y, int x) throws Exception {
+    public void atacar(Peca pecaDefensora) throws Exception {
+        pecaDefensora.setTime(null);
+        pecasAtacadas.add(pecaDefensora);
         
+        movimentar(pecaDefensora.getY(), pecaDefensora.getX());
     }
 
     public boolean isMovimentacaoPossivel(int y, int x) {
@@ -55,20 +62,24 @@ public abstract class Peca {
                 || ((x == this.x) && (y == this.y - 1)) && (!tabuleiro.getTerreno(y, x).getNome().equalsIgnoreCase("Agua")) && (!time.getToca().getNome().equalsIgnoreCase(tabuleiro.getTerreno(y, x).getNome()));
     }
 
-    public int getX() {
-        return x;
-    }
+    public int getX() { return x; }
 
-    public void setX(int x) {
-        this.x = x;
-    }
+    public void setX(int x) { this.x = x; }
 
-    public int getY() {
-        return y;
-    }
+    public int getY() { return y; }
 
-    public void setY(int y) {
-        this.y = y;
-    }
+    public void setY(int y) { this.y = y; }
 
+    public Time getTime() { return time; }
+
+    public void setTime(Time time) { this.time = time; }
+
+    public List<Peca> getPecasAtacadas() { return pecasAtacadas; }
+    
+    
+    
+    
+    
+    
+    
 }

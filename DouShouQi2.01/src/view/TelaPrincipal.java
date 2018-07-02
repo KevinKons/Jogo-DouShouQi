@@ -194,7 +194,6 @@ public class TelaPrincipal extends JFrame implements Observador {
         if (caminhoImagemPosAnterior != null) {
             posAnterior.setIcon(new ImageIcon(getClass().getResource("/view/imagens/" + caminhoImagemPosAnterior)));
         } else {
-            System.out.println(posAnteriorY + " " + posAnteriorX);
             posAnterior.setIcon(new ImageIcon());
         }
 
