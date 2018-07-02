@@ -17,42 +17,42 @@ public class BuilderTimeA extends BuilderTime {
 
     @Override
     public void constroiRato(Tabuleiro tabuleiro) {
-        time.addPecas(fabricaDePeca.criarRato("rato1.png", 1, "Rato", tabuleiro, time, 2, 0));
+        time.addPecas(fabricaDePeca.criarRato("rato1.png", FabricaAbstrataDePeca.FORÇA_RATO, "Rato", tabuleiro, time, 2, 0));
     }
 
     @Override
     public void constroiGato(Tabuleiro tabuleiro) {
-        time.addPecas(fabricaDePeca.criarGato("gato1.png", 2, "Gato", tabuleiro, time, 1, 5));
+        time.addPecas(fabricaDePeca.criarGato("gato1.png", FabricaAbstrataDePeca.FORÇA_GATO, "Gato", tabuleiro, time, 1, 5));
     }
 
     @Override
     public void constroiCachorro(Tabuleiro tabuleiro) {
-        time.addPecas(fabricaDePeca.criarCachorro("cao1.png", 3, "Cachorro", tabuleiro, time, 1, 1));
+        time.addPecas(fabricaDePeca.criarCachorro("cao1.png", FabricaAbstrataDePeca.FORÇA_CACHORRO, "Cachorro", tabuleiro, time, 1, 1));
     }
 
     @Override
     public void constroiLobo(Tabuleiro tabuleiro) {
-        time.addPecas(fabricaDePeca.criarLobo("lobo1.png", 4, "Lobo", tabuleiro, time, 2, 4));
+        time.addPecas(fabricaDePeca.criarLobo("lobo1.png", FabricaAbstrataDePeca.FORÇA_LOBO, "Lobo", tabuleiro, time, 2, 4));
     }
 
     @Override
     public void constroiLeopardo(Tabuleiro tabuleiro) {
-        time.addPecas(fabricaDePeca.criarLeopardo("leopardo1.png", 5, "Leopardo", tabuleiro, time, 2, 2));
+        time.addPecas(fabricaDePeca.criarLeopardo("leopardo1.png", FabricaAbstrataDePeca.FORÇA_LEOPARDO, "Leopardo", tabuleiro, time, 2, 2));
     }
 
     @Override
     public void constroiTigre(Tabuleiro tabuleiro) {
-        time.addPecas(fabricaDePeca.criarTigre("tigre1.png", 6, "Tigre", tabuleiro, time, 0, 6));
+        time.addPecas(fabricaDePeca.criarTigre("tigre1.png", FabricaAbstrataDePeca.FORÇA_TIGRE, "Tigre", tabuleiro, time, 0, 6));
     }
 
     @Override
     public void constroiLeao(Tabuleiro tabuleiro) {
-        time.addPecas(fabricaDePeca.criarLeao("leao1.png", 7, "Leao", tabuleiro, time, 0, 0));
+        time.addPecas(fabricaDePeca.criarLeao("leao1.png", FabricaAbstrataDePeca.FORÇA_LEAO, "Leao", tabuleiro, time, 0, 0));
     }
 
     @Override
     public void constroiElefante(Tabuleiro tabuleiro) {
-        time.addPecas(fabricaDePeca.criarElefante("elefante1.png", 8, "Elefante", tabuleiro, time, 2, 6));
+        time.addPecas(fabricaDePeca.criarElefante("elefante1.png", FabricaAbstrataDePeca.FORÇA_ELEFANTE, "Elefante", tabuleiro, time, 2, 6));
     }
 
     @Override

@@ -16,6 +16,15 @@ import model.pecaPulaRio.Tigre;
  * @author Avell
  */
 public abstract class FabricaAbstrataDePeca {
+    
+    public static final int FORÇA_RATO = 1;
+    public static final int FORÇA_GATO = 2;
+    public static final int FORÇA_CACHORRO = 3;
+    public static final int FORÇA_LOBO = 4;
+    public static final int FORÇA_LEOPARDO = 5;
+    public static final int FORÇA_TIGRE = 6;
+    public static final int FORÇA_LEAO = 7;
+    public static final int FORÇA_ELEFANTE = 8;
  
     public abstract Rato criarRato(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);
     public abstract Gato criarGato(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);

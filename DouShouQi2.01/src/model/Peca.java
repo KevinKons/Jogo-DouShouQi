@@ -74,6 +74,8 @@ public abstract class Peca {
     public void setTime(Time time) { this.time = time; }
 
     public List<Peca> getPecasAtacadas() { return pecasAtacadas; }
+
+    public void setForca(int forca) { this.forca = forca; }
     
     
     
