@@ -6,9 +6,9 @@ import model.Peca;
  *
  * @author Avell
  */
-public interface VisitorTime {
+public interface VisitorTime<T> {
     
     void visit(Peca peca);
     
-    Object getValue();
+    T getValue();
 }

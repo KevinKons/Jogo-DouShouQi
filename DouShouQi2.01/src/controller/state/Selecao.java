@@ -45,6 +45,7 @@ public class Selecao extends State {
             ci.execute(y, x, 3, controller.getPecaSelecionada());
             
             controller.atualizaPontuacao();
+            controller.atualizaPecasAtacadas();
             operacoesPosMovOuAtaque(y, x, posAnteriorY, posAnteriorX);
         }
     }

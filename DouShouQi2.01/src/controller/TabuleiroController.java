@@ -9,6 +9,7 @@ import model.Peca;
 import model.Tabuleiro;
 import model.time.Time;
 import model.terrenos.Terreno;
+import model.time.strategy.CalcPecasAtacadasStrategy;
 import model.time.strategy.CalcPontuacaoStrategy;
 
 /**
@@ -149,5 +150,12 @@ public class TabuleiroController implements Observado, Controller {
         atacante.setStrategy(new CalcPontuacaoStrategy());
         int pontuacao = atacante.calcularPontuacao();
         System.out.println("pontuacao " + atacante.getNome() + ": " + pontuacao );
+    }
+    
+    @Override
+    public void atualizaPecasAtacadas() {
+        atacante.setStrategy(new CalcPecasAtacadasStrategy());
+        int pecasAtacadas = atacante.calcularPontuacao();
+        System.out.println("pontuacao " + atacante.getNome() + ": " + pecasAtacadas );
     }
 }

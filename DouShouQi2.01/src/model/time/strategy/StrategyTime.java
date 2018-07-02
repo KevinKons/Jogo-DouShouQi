@@ -6,8 +6,8 @@ import model.time.Time;
  *
  * @author Avell
  */
-public interface StrategyTime {
+public interface StrategyTime<T> {
     
-    public Object calcular(Time time);
+    public T calcular(Time time);
     
 }

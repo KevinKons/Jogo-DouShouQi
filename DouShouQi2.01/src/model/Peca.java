@@ -50,11 +50,7 @@ public abstract class Peca {
     }
 
     public void atacar(Peca pecaDefensora) throws Exception {
-        Time t = pecaDefensora.getTime();
-        System.out.println(t.getPecas().size());
         pecasAtacadas.add(pecaDefensora.getTime().removerPeca(pecaDefensora));
-        System.out.println(t.getPecas().size());
-        
         movimentar(pecaDefensora.getY(), pecaDefensora.getX());
     }
 

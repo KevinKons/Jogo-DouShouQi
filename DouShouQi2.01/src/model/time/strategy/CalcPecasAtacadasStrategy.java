@@ -10,7 +10,7 @@ import model.time.visitor.VisitorTime;
  *
  * @author Avell
  */
-public class CalcPontuacaoStrategy implements StrategyTime<Integer> {
+public class CalcPecasAtacadasStrategy implements StrategyTime<Integer> {
 
     @Override
     public Integer calcular(Time time) {
@@ -18,12 +18,7 @@ public class CalcPontuacaoStrategy implements StrategyTime<Integer> {
         time.accept(buscaPecasAtacadas);
         List<Peca> pecasAtacadas = (List<Peca>) buscaPecasAtacadas.getValue();
         
-        int pontuacao = 0;
-        for(Peca pecaAtacada : pecasAtacadas) {
-            pontuacao += pecaAtacada.getForca();
-        }
-        
-        return pontuacao;
+        return pecasAtacadas.size();
     }
     
 }

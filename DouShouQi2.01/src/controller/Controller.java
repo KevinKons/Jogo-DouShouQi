@@ -27,4 +27,5 @@ public interface Controller extends Observado {
     public void setPecaSelecionada(Peca peca);
     public void setState(State state);
     public void atualizaPontuacao();
+    public void atualizaPecasAtacadas();
 }

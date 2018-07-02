@@ -8,7 +8,7 @@ import model.Peca;
  *
  * @author Avell
  */
-public class BuscaPecasAtacadasVisitor implements VisitorTime {
+public class BuscaPecasAtacadasVisitor implements VisitorTime<List<Peca>> {
 
     private List<Peca> pecasAtacadas = new ArrayList<>();
 
@@ -20,7 +20,7 @@ public class BuscaPecasAtacadasVisitor implements VisitorTime {
     }
 
     @Override
-    public Object getValue() {
+    public List<Peca> getValue() {
         return pecasAtacadas;
     }
 
