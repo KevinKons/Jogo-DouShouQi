@@ -1,7 +1,7 @@
 package model.fabricaDePeca;
 
 import model.Tabuleiro;
-import model.Time;
+import model.time.Time;
 import model.pecaEntraNoRio.Rato;
 import model.pecaPadrao.Cachorro;
 import model.pecaPadrao.Elefante;

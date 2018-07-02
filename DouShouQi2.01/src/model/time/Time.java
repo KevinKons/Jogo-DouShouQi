@@ -1,8 +1,11 @@
-package model;
+package model.time;
 
 import java.util.ArrayList;
 import java.util.List;
+import model.Peca;
 import model.terrenos.Terreno;
+import model.time.strategy.StrategyTime;
+import model.time.visitor.VisitorTime;
 
 /**
  *
@@ -13,7 +16,8 @@ public class Time {
     private List<Peca> pecas = new ArrayList<>();
     private List<Terreno> terrenos = new ArrayList<>(); //Armadilhas e Toca pertencem a um time;
     private String nome;
-
+    private StrategyTime strategy;
+    
     public String getNome() {
         return nome;
     }
@@ -65,6 +69,31 @@ public class Time {
     public void addTerreno(Terreno terreno) {
         this.terrenos.add(terreno);
     }
+
+    public void accept(VisitorTime buscaPecasAtacadas) {
+        for(Peca peca : pecas) {
+            buscaPecasAtacadas.visit(peca);
+        }
+    }
+
+    public void setStrategy(StrategyTime strategy) {
+        this.strategy = strategy;
+    }
+    
+    public int calcularPontuacao() {
+        return (int) strategy.calcular(this);
+    }
+
+    public Peca removerPeca(Peca pecaMorta) {
+        for(int i = 0; i < pecas.size(); i++) {
+            Peca peca = pecas.get(i);
+            if(peca.getNome().equalsIgnoreCase(pecaMorta.getNome())) {
+                return pecas.remove(i);
+            }
+        }
+        throw new NullPointerException("Peca atacada não encontrada");
+    }
+    
     
     
 }

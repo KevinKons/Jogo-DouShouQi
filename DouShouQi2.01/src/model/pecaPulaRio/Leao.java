@@ -1,7 +1,7 @@
 package model.pecaPulaRio;
 
 import model.Tabuleiro;
-import model.Time;
+import model.time.Time;
 
 /**
  *

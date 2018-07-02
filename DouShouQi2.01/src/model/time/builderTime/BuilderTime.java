@@ -1,7 +1,7 @@
-package model.BuilderTime;
+package model.time.builderTime;
 
 import model.Tabuleiro;
-import model.Time;
+import model.time.Time;
 import model.fabricaDePeca.FabricaAbstrataDePeca;
 import model.terrenos.FabricaAbstrataDeTerreno;
 

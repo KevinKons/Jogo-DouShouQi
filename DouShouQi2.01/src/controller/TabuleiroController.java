@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Peca;
 import model.Tabuleiro;
-import model.Time;
+import model.time.Time;
 import model.terrenos.Terreno;
+import model.time.strategy.CalcPontuacaoStrategy;
 
 /**
  *
@@ -73,10 +74,6 @@ public class TabuleiroController implements Observado, Controller {
 
     }
 
-    public void verTabuleiro() {
-        System.out.println(tabuleiro.toString());
-    }
-
     @Override
     public int getQntLinhas() {
         if (tabuleiro == null) {
@@ -118,10 +115,6 @@ public class TabuleiroController implements Observado, Controller {
         pecaSelecionada = tabuleiro.getTerreno(y, x).getPeca();
     }
 
-    public Tabuleiro getTabuleiro() {
-        return tabuleiro;
-    }
-
     @Override
     public void trocarAtacante() {
         if (tabuleiro.getTimeA().equals(atacante)) {
@@ -150,9 +143,11 @@ public class TabuleiroController implements Observado, Controller {
     public Time getAtacante() {
         return atacante;
     }
-
-    public void setAtacante(Time atacante) {
-        this.atacante = atacante;
+    
+    @Override
+    public void atualizaPontuacao() {
+        atacante.setStrategy(new CalcPontuacaoStrategy());
+        int pontuacao = atacante.calcularPontuacao();
+        System.out.println("pontuacao " + atacante.getNome() + ": " + pontuacao );
     }
-
 }

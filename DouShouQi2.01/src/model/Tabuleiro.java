@@ -1,10 +1,11 @@
 package model;
 
+import model.time.Time;
 import model.terrenos.Terreno;
-import model.BuilderTime.BuilderTime;
-import model.BuilderTime.BuilderTimeA;
-import model.BuilderTime.BuilderTimeB;
-import model.BuilderTime.Tecnico;
+import model.time.builderTime.BuilderTime;
+import model.time.builderTime.BuilderTimeA;
+import model.time.builderTime.BuilderTimeB;
+import model.time.builderTime.Tecnico;
 import model.fabricaDePeca.FabricaAbstrataDePeca;
 import model.fabricaDePeca.FabricaDePeca;
 import model.terrenos.FabricaAbstrataDeTerreno;
@@ -173,7 +174,7 @@ public class Tabuleiro {
         terrenos[4][3] = fabricaDeTerreno.criarGrama(4, 3, "Grama", 16, 135, 6);
         terrenos[4][4] = fabricaDeTerreno.criarAgua(4, 4, "Agua", 21, 106, 206);
         terrenos[4][5] = fabricaDeTerreno.criarAgua(4, 5, "Agua", 21, 106, 206);
-        terrenos[4][6] = fabricaDeTerreno.criarGrama(4, 6, "Agua", 16, 135, 6);
+        terrenos[4][6] = fabricaDeTerreno.criarGrama(4, 6, "Grama", 16, 135, 6);
 
         terrenos[5][0] = fabricaDeTerreno.criarGrama(5, 0, "Grama", 16, 135, 6);
         terrenos[5][1] = fabricaDeTerreno.criarAgua(5, 1, "Agua", 21, 106, 206);

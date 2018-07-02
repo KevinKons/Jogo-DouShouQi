@@ -1,5 +1,6 @@
 package model;
 
+import model.time.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,8 +50,10 @@ public abstract class Peca {
     }
 
     public void atacar(Peca pecaDefensora) throws Exception {
-        pecaDefensora.setTime(null);
-        pecasAtacadas.add(pecaDefensora);
+        Time t = pecaDefensora.getTime();
+        System.out.println(t.getPecas().size());
+        pecasAtacadas.add(pecaDefensora.getTime().removerPeca(pecaDefensora));
+        System.out.println(t.getPecas().size());
         
         movimentar(pecaDefensora.getY(), pecaDefensora.getX());
     }

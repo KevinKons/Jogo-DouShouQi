@@ -1,5 +1,5 @@
 
-package model.BuilderTime;
+package model.time.builderTime;
 
 import model.Tabuleiro;
 

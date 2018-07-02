@@ -1,4 +1,4 @@
-package model.BuilderTime;
+package model.time.builderTime;
 
 import model.Tabuleiro;
 import model.fabricaDePeca.FabricaAbstrataDePeca;
@@ -12,6 +12,7 @@ public class BuilderTimeB extends BuilderTime {
 
     public BuilderTimeB(FabricaAbstrataDePeca fabricaDePeca, FabricaAbstrataDeTerreno fabricaDeTerreno) {
         super(fabricaDePeca, fabricaDeTerreno);
+        time.setNome("TimeB");
     }
 
     @Override

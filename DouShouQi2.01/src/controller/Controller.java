@@ -2,7 +2,7 @@ package controller;
 
 import controller.state.State;
 import model.Peca;
-import model.Time;
+import model.time.Time;
 import model.terrenos.Terreno;
 
 /**
@@ -26,4 +26,5 @@ public interface Controller extends Observado {
     public void trocarAtacante();
     public void setPecaSelecionada(Peca peca);
     public void setState(State state);
+    public void atualizaPontuacao();
 }

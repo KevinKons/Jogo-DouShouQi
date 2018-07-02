@@ -2,7 +2,7 @@ package model.pecaPadrao;
 
 import model.Peca;
 import model.Tabuleiro;
-import model.Time;
+import model.time.Time;
 
 /**
  *

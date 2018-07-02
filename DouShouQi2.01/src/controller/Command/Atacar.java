@@ -20,7 +20,6 @@ public class Atacar implements Command {
         Peca pecaDefensora = Tabuleiro.getInstance().getTerreno(y, x).getPeca();
         if(peca.getForca() > pecaDefensora.getForca()) {
             peca.atacar(pecaDefensora);
-            System.out.println(peca.getPecasAtacadas().size());
         } else if(peca.getNome().equalsIgnoreCase("rato") && pecaDefensora.getNome()
                 .equalsIgnoreCase("Elefante")) {
             peca.atacar(pecaDefensora);
