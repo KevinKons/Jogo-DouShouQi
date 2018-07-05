@@ -27,12 +27,6 @@ public class Tabuleiro {
         return instance;
     }
 
-    public synchronized static Tabuleiro newInstance() {
-        instance = new Tabuleiro();
-
-        return instance;
-    }
-
     private Terreno[][] terrenos;
     private final int qntLinhas = 9;
     private final int qntColunas = 7;
@@ -47,12 +41,14 @@ public class Tabuleiro {
     private FabricaAbstrataDeTerreno fabricaDeTerreno = new FabricaDeTerreno();
     
     private Tabuleiro() {
-        this.terrenos = new Terreno[qntLinhas][qntColunas];
-        this.timeA = montarTimeA();
-        this.timeB = montarTimeB();
-        montarTabuleiro();
     }
 
+    public void limparTabuleiro() {
+        terrenos = null;
+        timeA = null;
+        timeB = null;
+    }
+    
     private Time montarTimeA() {
         builderTime = new BuilderTimeA(fabricaDePeca, fabricaDeTerreno);
         tecnico = new Tecnico(builderTime);
@@ -134,8 +130,12 @@ public class Tabuleiro {
         return retorno;
     }
 
-    private void montarTabuleiro() {
-
+    public void montarTabuleiro() {
+        this.terrenos = new Terreno[qntLinhas][qntColunas];
+        
+        this.timeA = montarTimeA();
+        this.timeB = montarTimeB();
+        
         terrenos[0][0] = fabricaDeTerreno.criarGrama(timeA.getPeca("Leao"), 0, 0, "Grama", 16, 135, 6);
         terrenos[0][1] = fabricaDeTerreno.criarGrama(0, 1, "Grama", 16, 135, 6);
         terrenos[0][2] = timeA.getTerreno(0, 2);
@@ -207,7 +207,7 @@ public class Tabuleiro {
         terrenos[8][4] = timeB.getTerreno(8, 4);
         terrenos[8][5] = fabricaDeTerreno.criarGrama(8, 5, "Grama", 16, 135, 6);
         terrenos[8][6] = fabricaDeTerreno.criarGrama(timeB.getPeca("Leao"), 8, 6,"Grama", 16, 135, 6);
-
+        
     }
 
 }

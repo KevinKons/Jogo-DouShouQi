@@ -96,6 +96,7 @@ public class TelaPrincipal extends JFrame implements Observador {
             public void actionPerformed(ActionEvent e) {
                 controller.criarTabuleiro();
                 tableModel.criarTabuleiro();
+                jbNovaPartida.setEnabled(false);
             }
         });
 
@@ -103,6 +104,7 @@ public class TelaPrincipal extends JFrame implements Observador {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.encerrarPartida();
+                jbNovaPartida.setEnabled(true);
 
             }
         });

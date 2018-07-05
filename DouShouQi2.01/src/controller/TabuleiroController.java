@@ -29,6 +29,7 @@ public class TabuleiroController implements Observado, Controller {
     @Override
     public void criarTabuleiro() {
         tabuleiro = Tabuleiro.getInstance();
+        tabuleiro.montarTabuleiro();
 
         for (Observador o : observadores) {
             o.iniciaTabuleiro(tabuleiro.getImagensECorDeFundo());
@@ -37,7 +38,7 @@ public class TabuleiroController implements Observado, Controller {
     }
 
     public void encerrarPartida() {
-        tabuleiro = Tabuleiro.newInstance();
+        tabuleiro.limparTabuleiro();
 
         for (Observador o : observadores) {
             o.partidaEncerrada();
