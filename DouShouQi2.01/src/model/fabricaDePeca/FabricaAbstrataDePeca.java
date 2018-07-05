@@ -26,12 +26,12 @@ public abstract class FabricaAbstrataDePeca {
     public static final int FORÇA_LEAO = 7;
     public static final int FORÇA_ELEFANTE = 8;
  
-    public abstract Rato criarRato(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);
-    public abstract Gato criarGato(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);
-    public abstract Cachorro criarCachorro(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);
-    public abstract Lobo criarLobo(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);
-    public abstract Leopardo criarLeopardo(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);
-    public abstract Tigre criarTigre(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);
-    public abstract Leao criarLeao(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);
-    public abstract Elefante criarElefante(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y);
+    public abstract Rato criarRato(String img, int forca, String nome, Time time, int x, int y);
+    public abstract Gato criarGato(String img, int forca, String nome, Time time, int x, int y);
+    public abstract Cachorro criarCachorro(String img, int forca, String nome, Time time, int x, int y);
+    public abstract Lobo criarLobo(String img, int forca, String nome, Time time, int x, int y);
+    public abstract Leopardo criarLeopardo(String img, int forca, String nome, Time time, int x, int y);
+    public abstract Tigre criarTigre(String img, int forca, String nome, Time time, int x, int y);
+    public abstract Leao criarLeao(String img, int forca, String nome, Time time, int x, int y);
+    public abstract Elefante criarElefante(String img, int forca, String nome, Time time, int x, int y);
 }

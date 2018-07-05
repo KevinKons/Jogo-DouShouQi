@@ -52,14 +52,14 @@ public class Tabuleiro {
     private Time montarTimeA() {
         builderTime = new BuilderTimeA(fabricaDePeca, fabricaDeTerreno);
         tecnico = new Tecnico(builderTime);
-        tecnico.montarTime(this);
+        tecnico.montarTime();
         return builderTime.getTime();
     }
 
     private Time montarTimeB() {
         builderTime = new BuilderTimeB(fabricaDePeca, fabricaDeTerreno);
         tecnico = new Tecnico(builderTime);
-        tecnico.montarTime(this);
+        tecnico.montarTime();
         return builderTime.getTime();
     }
 

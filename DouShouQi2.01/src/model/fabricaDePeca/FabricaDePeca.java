@@ -18,43 +18,43 @@ import model.pecaPulaRio.Tigre;
 public class FabricaDePeca extends FabricaAbstrataDePeca {
 
     @Override
-    public Rato criarRato(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        return new Rato(forca, img, nome, tabuleiro, time, x, y);
+    public Rato criarRato(String img, int forca, String nome, Time time, int x, int y) {
+        return new Rato(forca, img, nome, time, x, y);
     }
 
     @Override
-    public Gato criarGato(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        return new Gato(forca, img, nome, tabuleiro, time, x, y);
+    public Gato criarGato(String img, int forca, String nome, Time time, int x, int y) {
+        return new Gato(forca, img, nome, time, x, y);
     }
 
     @Override
-    public Cachorro criarCachorro(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        return new Cachorro(forca, img, nome, tabuleiro, time, x, y);
+    public Cachorro criarCachorro(String img, int forca, String nome, Time time, int x, int y) {
+        return new Cachorro(forca, img, nome, time, x, y);
     }
 
     @Override
-    public Lobo criarLobo(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        return new Lobo(forca, img, nome, tabuleiro, time, x, y);
+    public Lobo criarLobo(String img, int forca, String nome, Time time, int x, int y) {
+        return new Lobo(forca, img, nome, time, x, y);
     }
 
     @Override
-    public Leopardo criarLeopardo(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        return new Leopardo(forca, img, nome, tabuleiro, time, x, y);
+    public Leopardo criarLeopardo(String img, int forca, String nome, Time time, int x, int y) {
+        return new Leopardo(forca, img, nome, time, x, y);
     }
 
     @Override
-    public Tigre criarTigre(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        return new Tigre(forca, img, nome, tabuleiro, time, x, y);
+    public Tigre criarTigre(String img, int forca, String nome, Time time, int x, int y) {
+        return new Tigre(forca, img, nome, time, x, y);
     }
 
     @Override
-    public Leao criarLeao(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        return new Leao(forca, img, nome, tabuleiro, time, x, y);
+    public Leao criarLeao(String img, int forca, String nome, Time time, int x, int y) {
+        return new Leao(forca, img, nome, time, x, y);
     }
 
     @Override
-    public Elefante criarElefante(String img, int forca, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        return new Elefante(forca, img, nome, tabuleiro, time, x, y);
+    public Elefante criarElefante(String img, int forca, String nome, Time time, int x, int y) {
+        return new Elefante(forca, img, nome, time, x, y);
     }
     
 }

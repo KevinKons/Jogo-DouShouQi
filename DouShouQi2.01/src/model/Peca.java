@@ -19,11 +19,11 @@ public abstract class Peca {
     protected int y;
     protected List<Peca> pecasAtacadas = new ArrayList<>();
 
-    public Peca(int forca, String caminhoImagem, String nome, Tabuleiro tabuleiro, Time time, int y, int x) {
+    public Peca(int forca, String caminhoImagem, String nome, Time time, int y, int x) {
         this.forca = forca;
         this.caminhoImagem = caminhoImagem;
         this.nome = nome;
-        this.tabuleiro = tabuleiro;
+        this.tabuleiro = Tabuleiro.getInstance();
         this.time = time;
         this.x = x;
         this.y = y;

@@ -17,16 +17,16 @@ public class Tecnico {
         this.bt = bt;
     }
     
-    public void montarTime(Tabuleiro tabuleiro) {
-        bt.constroiRato(tabuleiro);
-        bt.constroiGato(tabuleiro);
-        bt.constroiCachorro(tabuleiro);
-        bt.constroiLobo(tabuleiro);
-        bt.constroiLeopardo(tabuleiro);
-        bt.constroiTigre(tabuleiro);
-        bt.constroiLeao(tabuleiro);
-        bt.constroiElefante(tabuleiro);
-        bt.constroiArmadilhas(tabuleiro);
-        bt.constroiToca(tabuleiro);
+    public void montarTime() {
+        bt.constroiRato();
+        bt.constroiGato();
+        bt.constroiCachorro();
+        bt.constroiLobo();
+        bt.constroiLeopardo();
+        bt.constroiTigre();
+        bt.constroiLeao();
+        bt.constroiElefante();
+        bt.constroiArmadilhas();
+        bt.constroiToca();
     }
 }

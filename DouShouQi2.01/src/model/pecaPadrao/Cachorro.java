@@ -10,8 +10,8 @@ import model.time.Time;
  */
 public class Cachorro extends Peca {
 
-    public Cachorro(int forca, String caminhoImagem, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        super(forca, caminhoImagem, nome, tabuleiro, time, x, y);
+    public Cachorro(int forca, String caminhoImagem, String nome, Time time, int x, int y) {
+        super(forca, caminhoImagem, nome, time, x, y);
     }
 
 }

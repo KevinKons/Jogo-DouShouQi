@@ -20,16 +20,16 @@ public abstract class BuilderTime {
         this.fabricaDeTerreno = fabricaDeTerreno;
     }
     
-    public abstract void constroiRato(Tabuleiro tabuleiro);
-    public abstract void constroiGato(Tabuleiro tabuleiro);
-    public abstract void constroiCachorro(Tabuleiro tabuleiro);
-    public abstract void constroiLobo(Tabuleiro tabuleiro);
-    public abstract void constroiLeopardo(Tabuleiro tabuleiro);
-    public abstract void constroiTigre(Tabuleiro tabuleiro);
-    public abstract void constroiLeao(Tabuleiro tabuleiro);
-    public abstract void constroiElefante(Tabuleiro tabuleiro);
-    public abstract void constroiArmadilhas(Tabuleiro tabuleiro);
-    public abstract void constroiToca(Tabuleiro tabuleiro);
+    public abstract void constroiRato();
+    public abstract void constroiGato();
+    public abstract void constroiCachorro();
+    public abstract void constroiLobo();
+    public abstract void constroiLeopardo();
+    public abstract void constroiTigre();
+    public abstract void constroiLeao();
+    public abstract void constroiElefante();
+    public abstract void constroiArmadilhas();
+    public abstract void constroiToca();
 
     public Time getTime() {
         return time;

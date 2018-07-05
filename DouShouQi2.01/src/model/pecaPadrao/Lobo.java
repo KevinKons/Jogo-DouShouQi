@@ -11,8 +11,8 @@ import model.time.Time;
  */
 public class Lobo extends Peca {
     
-    public Lobo(int forca, String caminhoImagem, String nome, Tabuleiro tabuleiro, Time time, int y, int x) {
-        super(forca, caminhoImagem, nome, tabuleiro, time, y, x);
+    public Lobo(int forca, String caminhoImagem, String nome, Time time, int y, int x) {
+        super(forca, caminhoImagem, nome, time, y, x);
     }
     
 }

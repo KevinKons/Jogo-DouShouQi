@@ -10,8 +10,8 @@ import model.time.Time;
  */
 public class Leopardo extends Peca {
 
-    public Leopardo(int forca, String caminhoImagem, String nome, Tabuleiro tabuleiro, Time time, int x, int y) {
-        super(forca, caminhoImagem, nome, tabuleiro, time, x, y);
+    public Leopardo(int forca, String caminhoImagem, String nome, Time time, int x, int y) {
+        super(forca, caminhoImagem, nome, time, x, y);
     }
 
 }
