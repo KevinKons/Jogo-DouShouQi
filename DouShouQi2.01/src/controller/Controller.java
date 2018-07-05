@@ -28,4 +28,5 @@ public interface Controller extends Observado {
     public void setState(State state);
     public void atualizaPontuacao();
     public void atualizaPecasAtacadas();
+    void jogoVencido(Time vencedor);
 }

@@ -80,8 +80,8 @@ public class Time {
         this.strategy = strategy;
     }
     
-    public int calcularPontuacao() {
-        return (int) strategy.calcular(this);
+    public Object calcularStrategy() {
+        return strategy.calcular(this);
     }
 
     public Peca removerPeca(Peca pecaMorta) {

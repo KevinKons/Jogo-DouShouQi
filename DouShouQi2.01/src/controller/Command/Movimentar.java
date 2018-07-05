@@ -20,6 +20,8 @@ public class Movimentar implements Command {
     @Override
     public void execute(int y, int x) {
         Terreno terreno = Tabuleiro.getInstance().getTerreno(y, x);
+        boolean entrouNaToca = false;
+        
         if (terreno.getNome().equalsIgnoreCase("Armadilha")) {
             peca.setForca(0);
         } else if (peca.getForca() == 0) {

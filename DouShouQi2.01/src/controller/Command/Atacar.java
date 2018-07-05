@@ -18,7 +18,7 @@ public class Atacar implements Command {
     @Override
     public void execute(int y, int x) throws Exception {
         Peca pecaDefensora = Tabuleiro.getInstance().getTerreno(y, x).getPeca();
-        if(peca.getForca() > pecaDefensora.getForca()) {
+        if(peca.getForca() >= pecaDefensora.getForca()) {
             peca.atacar(pecaDefensora);
         } else if(peca.getNome().equalsIgnoreCase("rato") && pecaDefensora.getNome()
                 .equalsIgnoreCase("Elefante")) {

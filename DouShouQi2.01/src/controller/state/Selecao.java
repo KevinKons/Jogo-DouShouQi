@@ -6,9 +6,10 @@
 package controller.state;
 
 import controller.Controller;
-import controller.TabuleiroController;
 import model.Peca;
 import model.Tabuleiro;
+import model.terrenos.Terreno;
+import model.time.Time;
 
 /**
  *
@@ -35,18 +36,30 @@ public class Selecao extends State {
             int posAnteriorX = controller.getPecaSelecionada().getX();
 
             ci.execute(y, x, 1, controller.getPecaSelecionada());
+            controller.notificaMovimentacao(y, x, posAnteriorY, posAnteriorX);
+            
+            Terreno destino = Tabuleiro.getInstance().getTerreno(y, x);
+            if (destino.getNome().contains("Toca")) {
+                controller.jogoVencido(controller.getPecaSelecionada().getTime());
+            }
 
-            operacoesPosMovOuAtaque(y, x, posAnteriorY, posAnteriorX);
-
+            controller.trocarAtacante();
+            controller.setPecaSelecionada(null);
+            controller.setState(new NaoSelecao(controller));
+            
         } else if (controller.getPecaSelecionada().isMovimentacaoPossivel(y, x) && peca != null) { //Ataque
             int posAnteriorY = controller.getPecaSelecionada().getY();
             int posAnteriorX = controller.getPecaSelecionada().getX();
 
             ci.execute(y, x, 3, controller.getPecaSelecionada());
-            
+
             controller.atualizaPontuacao();
-            controller.atualizaPecasAtacadas();
-            operacoesPosMovOuAtaque(y, x, posAnteriorY, posAnteriorX);
+
+            controller.notificaMovimentacao(y, x, posAnteriorY, posAnteriorX);
+
+            controller.trocarAtacante();
+            controller.setPecaSelecionada(null);
+            controller.setState(new NaoSelecao(controller));
         }
     }
 
@@ -54,14 +67,6 @@ public class Selecao extends State {
     public void proxEstado() throws Exception {
         throw new Exception("Operação não suportada, para sair do estado de"
                 + " seleção é necessário informar uma coordenada.");
-    }
-
-    private void operacoesPosMovOuAtaque(int y, int x, int posAnteriorY, int posAnteriorX) {
-        controller.notificaMovimentacao(y, x, posAnteriorY, posAnteriorX);
-
-        controller.trocarAtacante();
-        controller.setPecaSelecionada(null);
-        controller.setState(new NaoSelecao(controller));
     }
 
 }

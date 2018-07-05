@@ -9,7 +9,7 @@ import model.Peca;
 import model.Tabuleiro;
 import model.time.Time;
 import model.terrenos.Terreno;
-import model.time.strategy.CalcPecasAtacadasStrategy;
+import model.time.strategy.IdentificaPecasAtacadas;
 import model.time.strategy.CalcPontuacaoStrategy;
 
 /**
@@ -22,6 +22,7 @@ public class TabuleiroController implements Observado, Controller {
     private List<Observador> observadores = new ArrayList<>();
     private Peca pecaSelecionada = null;
     private Time atacante;
+    private Time defensor;
     private CommandInvoker ci = new CommandInvoker();
     private State tabuleiroControllerState = new NaoSelecao(this);
 
@@ -120,8 +121,10 @@ public class TabuleiroController implements Observado, Controller {
     public void trocarAtacante() {
         if (tabuleiro.getTimeA().equals(atacante)) {
             atacante = tabuleiro.getTimeB();
+            defensor = tabuleiro.getTimeA();
         } else {
             atacante = tabuleiro.getTimeA();
+            defensor = tabuleiro.getTimeB();
         }
     }
 
@@ -144,18 +147,36 @@ public class TabuleiroController implements Observado, Controller {
     public Time getAtacante() {
         return atacante;
     }
-    
+
     @Override
     public void atualizaPontuacao() {
         atacante.setStrategy(new CalcPontuacaoStrategy());
-        int pontuacao = atacante.calcularPontuacao();
-        System.out.println("pontuacao " + atacante.getNome() + ": " + pontuacao );
+        int pontuacao = (int) atacante.calcularStrategy();
+        if (atacante.equals(tabuleiro.getTimeA())) {
+            for (Observador o : observadores) {
+                o.atualizaPontuacaoTimeA(pontuacao);
+            }
+        } else {
+            for (Observador o : observadores) {
+                o.atualizaPontuacaoTimeB(pontuacao);
+            }
+        }
     }
-    
+
     @Override
     public void atualizaPecasAtacadas() {
-        atacante.setStrategy(new CalcPecasAtacadasStrategy());
-        int pecasAtacadas = atacante.calcularPontuacao();
-        System.out.println("pontuacao " + atacante.getNome() + ": " + pecasAtacadas );
+
+    }
+
+    @Override
+    public void jogoVencido(Time vencedor) {
+        atacante.setStrategy(new IdentificaPecasAtacadas());
+        String pecasAtacadasTimeVencedor = (String) atacante.calcularStrategy();
+
+        defensor.setStrategy(new IdentificaPecasAtacadas());
+        String pecasAtacadasTimeDefensor = (String) defensor.calcularStrategy();
+        for (Observador o : observadores) {
+            o.notificaVitoria(vencedor.getNome(), pecasAtacadasTimeVencedor, pecasAtacadasTimeDefensor);
+        }
     }
 }

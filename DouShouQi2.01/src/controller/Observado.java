@@ -7,7 +7,7 @@ package controller;
  */
 interface Observado {
     
-    void addObservador(Observador oo);
+    void addObservador(Observador o);
     
     void removerObservador(Observador o);
 }

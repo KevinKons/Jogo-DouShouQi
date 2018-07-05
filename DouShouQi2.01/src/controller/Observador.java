@@ -17,4 +17,10 @@ public interface Observador {
     public void limpaSelecao(int posAnteriorY, int posAnteriorX);
 
     public void partidaEncerrada();
+    
+    public void atualizaPontuacaoTimeA(int pontuacaoTimeA);
+    
+    public void atualizaPontuacaoTimeB(int pontuacaoTimeB);
+
+    public void notificaVitoria(String nome, String pecasAtacadasTimeVencedor, String pecasAtacadasTimeDefensor);
 }

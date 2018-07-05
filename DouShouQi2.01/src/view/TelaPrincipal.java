@@ -32,13 +32,15 @@ public class TelaPrincipal extends JFrame implements Observador {
     private Container container;
     private JPanel jpMenu;
     private JPanel jpTabuleiro;
+    private JPanel jpPontuacao;
+    private JLabel pontuacaoTimeA = new JLabel("Time A: ");
+    private JLabel pontuacaoTimeB = new JLabel("Time B: ");
     private TabuleiroController controller = new TabuleiroController();
-    ;
     private TabuleiroTableModel tableModel;
     private JTable jtbTabela;
 
     public TelaPrincipal() {
-        setSize(1000, 800);
+        setSize(900, 700);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -77,10 +79,17 @@ public class TelaPrincipal extends JFrame implements Observador {
         jtbTabela.setDefaultRenderer(Object.class, tabuleiroCellRenderer);
 
         jpTabuleiro.add(jtbTabela);
-        jtbTabela.setRowHeight(50);
-
+        jtbTabela.setRowHeight(60);
+        
+        jpPontuacao = new JPanel();
+        jpPontuacao.setLayout(new FlowLayout());
+        jpPontuacao.setBorder(new TitledBorder("Pontuação"));
+        jpPontuacao.add(pontuacaoTimeA);
+        jpPontuacao.add(pontuacaoTimeB);
+        
         container.add(BorderLayout.CENTER, jpTabuleiro);
         container.add(BorderLayout.NORTH, jpMenu);
+        container.add(BorderLayout.EAST, jpPontuacao);
 
         jbNovaPartida.addActionListener(new ActionListener() {
             @Override
@@ -209,4 +218,26 @@ public class TelaPrincipal extends JFrame implements Observador {
         l.setBorder(BorderFactory.createEmptyBorder());
         jtbTabela.repaint();
     }
+
+    @Override
+    public void atualizaPontuacaoTimeA(int pontuacaoTimeA) {
+        this.pontuacaoTimeA.setText("Time A: " + pontuacaoTimeA);
+    }
+
+    @Override
+    public void atualizaPontuacaoTimeB(int pontuacaoTimeB) {
+        this.pontuacaoTimeB.setText("Time B: " + pontuacaoTimeB);
+    }
+
+    @Override
+    public void notificaVitoria(String nome, String pecasAtacadasTimeVencedor, String pecasAtacadasTimeDefensor) {
+        jpTabuleiro.setEnabled(false);
+        jtbTabela.setEnabled(false);
+        JOptionPane.showMessageDialog(this, "O time " + nome + " venceu a partida! \n \n"
+                + "Pecas mortas pelo time vencedor: \n"
+                + pecasAtacadasTimeVencedor + "\n \n"
+                + "Pecas mortas pelo time perdedor: \n"
+                + pecasAtacadasTimeDefensor);
+    }
+
 }
