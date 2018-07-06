@@ -28,10 +28,4 @@ public class NaoSelecao extends State {
         }
     }
 
-    @Override
-    public void proxEstado() throws Exception {
-        throw new Exception("Operação não suportada, para sair do estado de"
-                + " não seleção é necessário informar uma coordenada.");
-    }
-
 }

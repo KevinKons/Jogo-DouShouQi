@@ -70,9 +70,9 @@ public class Time {
         this.terrenos.add(terreno);
     }
 
-    public void accept(VisitorTime buscaPecasAtacadas) {
+    public void accept(VisitorTime visitor) {
         for(Peca peca : pecas) {
-            buscaPecasAtacadas.visit(peca);
+            visitor.visit(peca);
         }
     }
 

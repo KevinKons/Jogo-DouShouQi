@@ -23,7 +23,6 @@ public class TabuleiroController implements Observado, Controller {
     private Peca pecaSelecionada = null;
     private Time atacante;
     private Time defensor;
-    private CommandInvoker ci = new CommandInvoker();
     private State tabuleiroControllerState = new NaoSelecao(this);
 
     @Override

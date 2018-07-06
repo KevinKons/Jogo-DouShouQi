@@ -63,10 +63,5 @@ public class Selecao extends State {
         }
     }
 
-    @Override
-    public void proxEstado() throws Exception {
-        throw new Exception("Operação não suportada, para sair do estado de"
-                + " seleção é necessário informar uma coordenada.");
-    }
 
 }

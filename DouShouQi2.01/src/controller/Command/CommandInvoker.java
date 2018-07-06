@@ -12,10 +12,20 @@ import model.Peca;
  * @author Avell
  */
 public class CommandInvoker {
+    
+    public static CommandInvoker getInstance() {
+        if(instance == null) {
+            instance = new CommandInvoker();
+        }
+        
+        return instance;
+    }
+    
+    private static CommandInvoker instance;
 
     private Map<Integer, Class<? extends Command>> comandos = new HashMap<>();
 
-    public CommandInvoker() {
+    private CommandInvoker() {
         comandos.put(1, Movimentar.class);
         comandos.put(2, SelecionarPeca.class);
         comandos.put(3, Atacar.class);

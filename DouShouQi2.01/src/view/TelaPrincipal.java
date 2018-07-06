@@ -94,6 +94,7 @@ public class TelaPrincipal extends JFrame implements Observador {
         jbNovaPartida.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                jtbTabela.setEnabled(true);
                 controller.criarTabuleiro();
                 tableModel.criarTabuleiro();
                 jbNovaPartida.setEnabled(false);
@@ -105,7 +106,6 @@ public class TelaPrincipal extends JFrame implements Observador {
             public void actionPerformed(ActionEvent e) {
                 controller.encerrarPartida();
                 jbNovaPartida.setEnabled(true);
-
             }
         });
 
@@ -233,7 +233,6 @@ public class TelaPrincipal extends JFrame implements Observador {
 
     @Override
     public void notificaVitoria(String nome, String pecasAtacadasTimeVencedor, String pecasAtacadasTimeDefensor) {
-        jpTabuleiro.setEnabled(false);
         jtbTabela.setEnabled(false);
         JOptionPane.showMessageDialog(this, "O time " + nome + " venceu a partida! \n \n"
                 + "Pecas mortas pelo time vencedor: \n"

@@ -10,14 +10,13 @@ import controller.Controller;
 public abstract class State {
     
     protected Controller controller;
-    protected CommandInvoker ci = new CommandInvoker();
+    protected CommandInvoker ci = CommandInvoker.getInstance();
 
     public State(Controller controller) {
         this.controller = controller;
     }
     
     public abstract void proxEstado(int y, int x) throws Exception;
-    public abstract void proxEstado() throws Exception;
     
     
 }
